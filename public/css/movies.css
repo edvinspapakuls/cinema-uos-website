@@ -1,0 +1,133 @@
+body, html {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: yellow;
+    height: 100%;
+}
+.data-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+.data-table th, .data-table td {
+    border: 1px solid yellow;
+    padding: 8px;
+    text-align: left;
+}
+.data-table th {
+    background-color: yellow;
+    color: black;
+}
+.data-table tbody tr:nth-child(odd) {
+    background-color: #303030; /* Slightly lighter black for odd rows */
+}
+.data-table tbody tr:hover {
+    background-color: #505050; /* Lighter black for hover */
+}
+
+/* form */
+.form-container {
+    text-align: center;
+    margin-top: 80px; /* Increased top margin to avoid overlap with the fixed navbar */
+    padding: 20px;
+    max-width: 800px; /* Fixed size for the form */
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-inner-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.input-field {
+    flex-grow: 1;
+    margin: 10px;
+    padding: 10px;
+    min-width: 120px;
+    background-color: #303030; /* Lighter than black for visibility */
+    border: 2px solid yellow;
+    color: yellow;
+    outline: none; /* Optional: Removes the default focus outline */
+}
+.submit-btn {
+    padding: 10px 20px;
+    background-color: yellow;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px; /* Ensures some space above the submit button */
+}
+.submit-btn:hover {
+    opacity: 0.9;
+}
+.data-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+.data-table th, .data-table td {
+    border: 1px solid yellow;
+    padding: 8px;
+    text-align: left;
+}
+.data-table th {
+    background-color: yellow;
+    color: black;
+}
+.data-table tbody tr:nth-child(odd) {
+    background-color: #303030;
+}
+.data-table tbody tr:hover {
+    background-color: #505050;
+}
+
+/* nav bar */
+.navbar {
+    background-color: black;
+    overflow: hidden;
+    position: fixed; /* Fixed navbar (stay at the top of the page) */
+    top: 0;
+    width: 100%;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: yellow;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: #555; /* Dark-grey background on hover */
+}
+.logo {
+    font-size: 24px; /* Larger font size for the logo */
+    font-weight: bold; /* Optional: Makes the logo text bolder */
+    padding-right: 20px; /* Optional: Adds some space after the logo */
+    border-right: 2px solid yellow; /* Optional: Adds a separator between the logo and the links */
+}
+/* Optional: Right-aligning other navigation links (if needed) */
+.navbar-right {
+    float: right;
+}
+
+/* buttons */
+.button-link {
+    background-color: yellow; /* Yellow background */
+    color: black; /* Black text color */
+    padding: 10px 20px; /* Top and bottom padding, left and right padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Allow width and height */
+    border: none; /* Remove borders */
+    cursor: pointer; /* Change mouse pointer to hand symbol */
+    border-radius: 5px; /* Optional: rounds corners for a softer look */
+    margin: 5px; /* Space between buttons */
+    font-size: 16px; /* Text size */
+}
+
+.button-link:hover {
+    background-color: #cccc00; /* Darker yellow on hover */
+    color: black; /* Keep text color black */
+}

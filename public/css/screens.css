@@ -1,0 +1,57 @@
+body, html {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: yellow;
+    height: 100%;
+}
+.data-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+.data-table th, .data-table td {
+    border: 1px solid yellow;
+    padding: 8px;
+    text-align: left;
+}
+.data-table th {
+    background-color: yellow;
+    color: black;
+}
+.data-table tbody tr:nth-child(odd) {
+    background-color: #303030; /* Slightly lighter black for odd rows */
+}
+.data-table tbody tr:hover {
+    background-color: #505050; /* Lighter black for hover */
+}
+
+/* nav bar */
+.navbar {
+    background-color: black;
+    overflow: hidden;
+    position: fixed; /* Fixed navbar (stay at the top of the page) */
+    top: 0;
+    width: 100%;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: yellow;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: #555; /* Dark-grey background on hover */
+}
+.logo {
+    font-size: 24px; /* Larger font size for the logo */
+    font-weight: bold; /* Optional: Makes the logo text bolder */
+    padding-right: 20px; /* Optional: Adds some space after the logo */
+    border-right: 2px solid yellow; /* Optional: Adds a separator between the logo and the links */
+}
+/* Optional: Right-aligning other navigation links (if needed) */
+.navbar-right {
+    float: right;
+}

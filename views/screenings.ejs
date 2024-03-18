@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CinemaDB</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/screenings.css">
+    </head>
+<body>
+
+    <div class="navbar">
+        <a href="#" class="logo">CinemaDB</a>
+        <a href="/screenings">Screening Plays</a>
+        <a href="/movies">Movies</a>
+        <a href="/screens">Screen Rooms</a>
+        <div class="navbar-right">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <div style="padding-top: 60px;"> <!-- Padding to ensure content doesn't hide behind the fixed navbar -->
+        <!-- Your page content goes here -->
+    </div>
+
+    <div class="form-container">
+        <form method="post" action="/postScreening">
+
+            <select class="input-field" name="movieID">
+                <option value="">Select Movie</option>
+                <% movies.forEach(function(movie) { %>
+                    <option value="<%= movie.movieID %>"><%= movie.title %></option>
+                <% }); %>
+            </select>
+
+            <select class="input-field" name="screenID">
+                <option value="">Select Screen</option>
+                <% screens.forEach(function(screen) { %>
+                    <% if (screen.occupied === 'NO') { %>
+                        <option value="<%= screen.screenID %>"><%= screen.screenID %></option>
+                    <% } %>
+                <% }); %>
+            </select>
+
+            <input type="date" class="input-field" placeholder="Movie Date" name="date">
+            <input type="time" class="input-field" placeholder="Start Time" name="startTime">
+
+            <button type="submit" class="submit-btn">Add to Table</button>
+        </form>
+    </div>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Screening ID</th>
+                <th>Movie</th>
+                <th>Screen ID</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Tickets Outstanding</th>
+                <th>Ticket Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% screenings.forEach(function(screening) { %>
+                <tr>
+                    <td><%= screening.screeningID %></td>
+                    <td><%= screening.movieName %></td>
+                    <td><%= screening.screenID %></td>
+                    <td><%= screening.date %></td>
+                    <td><%= screening.startTime %></td>
+                    <td><%= screening.endTime %></td>
+                    <td><%= screening.ticketsLeft %></td>
+                    <td>£5</td>
+                    <td><a class="button-link" href="/deleteScreening/<%= screening.screeningID %>">CANCEL</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+
+</html>

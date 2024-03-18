@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CinemaDB</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/movies.css">
+    </head>
+<body>
+
+    <div class="navbar">
+        <a href="#" class="logo">CinemaDB</a>
+        <a href="/screenings">Screening Plays</a>
+        <a href="/movies">Movies</a>
+        <a href="/screens">Screen Rooms</a>
+        <div class="navbar-right">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form method="post" action="/postMovies">
+            <input type="text" class="input-field" placeholder="Title" name="title">
+            <input type="date" class="input-field" placeholder="Release Date" name="releaseDate">
+            <input type="text" class="input-field" placeholder="Duration" name="duration">
+            <select class="input-field" name="genre">
+                <option value="">Select Genre</option>
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Horror">Horror</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Romance">Romance</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Documentary">Documentary</option>
+            </select>            
+            <input type="text" class="input-field" placeholder="Director" name="director">
+            <input type="text" class="input-field" placeholder="Language" name="language">
+            <select class="input-field" name="rating">
+                <option value="">Select Rating</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <textarea class="input-field" name="synopsis" placeholder="Enter synopsis here" rows="5" cols="50"></textarea><br>
+
+            <button type="submit" class="submit-btn">Add to Table</button>
+        </form>
+    </div>
+
+    <div style="padding-top: 60px;">
+    </div>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>MovieID</th>
+                <th>Title</th>
+                <th>Release Date</th>
+                <th>Duration</th>
+                <th>Genre</th>
+                <th>Direactor</th>
+                <th>Language</th>
+                <th>Rating</th>
+                <th>Synopsis</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% movies.forEach(function(movie) { %>
+                <tr>
+                    <td><%= movie.movieID %></td>
+                    <td><%= movie.title %></td>
+                    <td><%= movie.releaseDate %></td>
+                    <td><%= movie.duration %></td>
+                    <td><%= movie.genre %></td>
+                    <td><%= movie.director %></td>
+                    <td><%= movie.language %></td>
+                    <td><%= movie.rating %></td>
+                    <td><%= movie.synopsis %></td>
+                    <td><a class="button-link" href="/deleteMovie/<%= movie.movieID %>">DELETE</a><a class="button-link" href="/updateMovie/<%= movie.movieID %>">UPDATE</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>

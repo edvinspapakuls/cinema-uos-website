@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CinemaDB</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/movies.css">
+    </head>
+<body>
+
+    <div class="navbar">
+        <a href="#" class="logo">CinemaDB</a> <!-- Replace "#" with your actual logo link -->
+        <a href="/screenings">Screening Plays</a> <!-- Replace "#" with your actual link -->
+        <a href="/movies">Movies</a> <!-- Replace "#" with your actual link -->
+        <a href="/screens">Screen Rooms</a> <!-- Replace "#" with your actual link -->
+        <!-- Add more navigation links here -->
+        <div class="navbar-right">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form method="post" action="/updateMovie">
+            <input type="text" class="input-field" name="movieID" value="<%= movie.movieID %>" readonly>
+            <input type="text" class="input-field" placeholder="<%= movie.title %>" name="title" value="<%= movie.title %>">
+            <input type="date" class="input-field" name="releaseDate" value="<%= movie.releaseDate %>">
+            <input type="text" class="input-field" placeholder="Duration" name="duration" value="<%= movie.duration %>">
+            <select class="input-field" name="genre">
+                <option value="">Select Genre</option>
+                <option value="Action" <% if (movie.genre === 'Action') { %>selected<% } %>>Action</option>
+                <option value="Comedy" <% if (movie.genre === 'Comedy') { %>selected<% } %>>Comedy</option>
+                <option value="Drama" <% if (movie.genre === 'Drama') { %>selected<% } %>>Drama</option>
+                <option value="Fantasy" <% if (movie.genre === 'Fantasy') { %>selected<% } %>>Fantasy</option>
+                <option value="Horror" <% if (movie.genre === 'Horror') { %>selected<% } %>>Horror</option>
+                <option value="Mystery" <% if (movie.genre === 'Mystery') { %>selected<% } %>>Mystery</option>
+                <option value="Romance" <% if (movie.genre === 'Romance') { %>selected<% } %>>Romance</option>
+                <option value="Thriller" <% if (movie.genre === 'Thriller') { %>selected<% } %>>Thriller</option>
+                <option value="Sci-Fi" <% if (movie.genre === 'Sci-Fi') { %>selected<% } %>>Sci-Fi</option>
+                <option value="Documentary" <% if (movie.genre === 'Documentary') { %>selected<% } %>>Documentary</option>
+                <!-- Add more genres as needed -->
+            </select>
+            <input type="text" class="input-field" placeholder="Director" name="director" value="<%= movie.director %>">
+            <input type="text" class="input-field" placeholder="Language" name="language" value="<%= movie.language %>">
+            <textarea class="input-field" name="synopsis" placeholder="Enter synopsis here" rows="5" cols="50"><%= movie.synopsis %></textarea><br>
+
+            <button type="submit" class="submit-btn">Update</button>
+        </form>
+    </div>
+
+    <div style="padding-top: 60px;"> <!-- Padding to ensure content doesn't hide behind the fixed navbar -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: yellow;
+}
+.centered-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.cinema-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+input[type="text"], input[type="password"] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: black;
+    color: yellow;
+    border-radius: 4px;
+}
+input[type="submit"] {
+    background-color: yellow;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    font-size: 20px;
+}
+input[type="submit"]:hover {
+    opacity: 0.8;
+}

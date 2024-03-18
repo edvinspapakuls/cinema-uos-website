@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CinemaDB</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/movies.css">
+    </head>
+<body>
+
+    <div class="navbar">
+        <a href="#" class="logo">CinemaDB</a> <!-- Replace "#" with your actual logo link -->
+        <a href="/screenings">Screening Plays</a> <!-- Replace "#" with your actual link -->
+        <a href="/movies">Movies</a> <!-- Replace "#" with your actual link -->
+        <a href="/screens">Screen Rooms</a> <!-- Replace "#" with your actual link -->
+        <!-- Add more navigation links here -->
+        <div class="navbar-right">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form method="post" action="/updateScreenExec">
+
+            ID: <input type="text" class="input-field" name="screenID" value="<%= screen.screenID %>" readonly>
+            Initial Capacity: <input type="text" class="input-field" value="<%= screen.capacity %>" readonly>
+            <select class="input-field" name="capacity">
+                <option value="">Select New Capacity</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="150">150</option>
+                <option value="200">200</option>
+                <option value="250">250</option>
+                <option value="300">300</option>
+                <option value="350">350</option>
+                <option value="400">400</option>
+            </select>
+
+                <button type="submit" class="submit-btn">Update</button>
+        </form>
+    </div>
+
+    <div style="padding-top: 60px;"> <!-- Padding to ensure content doesn't hide behind the fixed navbar -->
+        <!-- Your page content goes here -->
+    </div>
+
+</body>
+</html>
